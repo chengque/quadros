@@ -1,0 +1,12 @@
+<launch>
+	<arg name='id' default=""/>
+	<arg name='path' default="./test.bag"/>
+	<group ns="uav1">
+		<node pkg="offboard" type="uavinstance.py" name="uavinstance" output="screen">
+			<param name="id" value="$(arg id)" type="string"/>
+		</node>
+		<node pkg="offboard" type="uavstabilizer.py" name="uavstabilizer" output="screen">
+			<param name="id" value="$(arg id)" type="string"/>
+		</node>
+	</group>
+</launch>

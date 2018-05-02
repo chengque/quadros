@@ -1,0 +1,9 @@
+<launch>
+<arg name='id' default=""/>
+<arg name='path' default="./test.bag"/>
+<include file="$(find offboard)/launch/offboard.launch">
+<arg name="id" value="$(arg id)"/>
+<arg name="path" value="$(arg path)"/>
+</include>
+<node pkg="rosbag" type="record" name="rosrecord" args="-O $(arg path) -a"/>
+</launch>
