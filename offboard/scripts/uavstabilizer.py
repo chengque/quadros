@@ -127,7 +127,7 @@ class stabilizer:
 		while not (rospy.is_shutdown()):
 			itae={}
 			for i in range(1,25):
-				for j in range(1,10):
+				for j in range(1,20):
 					print i,j
 					itime=rospy.get_rostime().to_sec()
 					now=0
@@ -436,8 +436,8 @@ class stabilizer:
 			ddx=0
 			ddy=0
 			
-			parm[0]=[3,0,0]
-			parm[1]=[0.6,0.0,0]
+			parm[0]=[2.4,0,0]
+			parm[1]=[0.45,0.0,0]
 			ref_pos.z=2
 			i=i+1
 			if(i>10000):
@@ -513,4 +513,4 @@ class stabilizer:
 
 if __name__ == '__main__':
 	uav=stabilizer()
-	uav.controlonce(0.5,[0,0,0])
+	uav.control(0.5,[0,0,0])
