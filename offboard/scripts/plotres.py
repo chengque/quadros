@@ -20,6 +20,7 @@ def getintervel(dat,dt):
 		it=it+1
 	return dat[:,it:]
 
+
 pos=getintervel(bag.fetch_pos(),starti)
 
 pos_ref=getintervel(bag.fetch_pos_ref(),starti)
