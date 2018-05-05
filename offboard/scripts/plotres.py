@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.rcParams['axes.unicode_minus']=False
 
-bag=unpacker(path="./testo.bag")
+bag=unpacker(path="/home/chengque/Desktop/test2.bag")
 bag.unpack()
 starti=10
 it=0
@@ -43,7 +43,8 @@ print len(pos[0,:])
 
 ilsize=30
 slsize=3
-ai=LSR(ilsize,slsize)
+#ai=LSR(ilsize,slsize)
+ai=StateNetwork(ilsize,slsize)
 bsize=32
 
 lp=len(vel[0])

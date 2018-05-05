@@ -6,7 +6,7 @@ import math
 import random
 import matplotlib.pyplot as plt
 
-bag=unpacker()
+bag=unpacker("/home/chengque/Desktop/test2.bag")
 bag.unpack()
 starti=10
 it=0
@@ -54,7 +54,8 @@ print len(pos[0,:])
 '''
 ilsize=30
 slsize=3
-ai=LSR(ilsize,slsize)
+#ai=LSR(ilsize,slsize)
+ai=StateNetwork(ilsize,slsize)
 bsize=32
 #training
 def learning():
@@ -70,6 +71,7 @@ def learning():
 			lx[j]=np.hstack(([1,vel[1,index]-vel[1,index-2],att[1,index],att[2,index]],att_ref[1,index:index+ilsize/3],att_ref[2,index:index+ilsize/3],thr_ref[1,index:index+ilsize/3]))
 			lf[j]=vel[1,index+ilsize/3-1]-vel[1,index]
 		loss+=ai.train(lx,lf)
+	ai.savemodel()
 	return loss
 def train():
 	for i in range(10000):
