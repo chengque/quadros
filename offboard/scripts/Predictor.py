@@ -28,6 +28,10 @@ class StateNetwork:
 		except:
 			print("Cannot find the weight")
 
+	def predict(self,u):
+		u=np.expand_dims(u,axis=2)
+		return self.inst_model.predict(u) 
+
 	def train(self,u,s):
 		u=np.expand_dims(u,axis=2)
 		return self.inst_model.train_on_batch(u,s) 
@@ -48,9 +52,9 @@ class StateNetwork:
 			json.dump(self.target_model.to_json(), outfile)
 
 	def buildmodel(self):
-		u=Input(shape=[self.isize+self.qsize])
+		u=Input(shape=[self.isize+self.qsize+1])
 		model=Sequential()
-		model.add(Conv1D(16,3,activation='tanh',input_shape=(self.isize+self.qsize,1)))
+		model.add(Conv1D(16,3,activation='tanh',input_shape=(self.isize+self.qsize+1,1)))
 		model.add(Conv1D(16,3,activation='relu'))
 		model.add(Flatten())
 		model.add(Dense(16,activation='tanh'))
@@ -58,10 +62,13 @@ class StateNetwork:
 		#s=Dense(shape=self.size,activation='tanh',init=lambda shape:VarianceScaling(scale=1e-4)(shape))(h1)
 		model.compile(optimizer='adam',
 			loss='mse')
+		self.inst_model=model
+		self.target_model=model
 		return model, model.trainable_weights, u
 	def mean_absolute_percentage_error(self,y_true, y_pred):
 		diff = K.abs((y_true - y_pred) / K.clip(K.abs(y_true), K.epsilon(), np.inf))
 		return 100. * K.max(diff, axis=-1)
+
 
 
 class LSR:

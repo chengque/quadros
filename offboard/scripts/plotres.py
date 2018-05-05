@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.rcParams['axes.unicode_minus']=False
 
-bag=unpacker()
+bag=unpacker(path="./testo.bag")
 bag.unpack()
 starti=10
 it=0

@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import tf_conversions
 import pickle
 import os
-bag=rosbag.Bag("/home/chengque/.ros/test.bag")
+#bag=rosbag.Bag("/home/chengque/.ros/test.bag")
 
 
 class curve:
@@ -30,7 +30,7 @@ class unpacker:
 			self.data=pickle.load(f)
 			f.close()
 			return
-		for topic,msg,t in bag.read_messages():
+		for topic,msg,t in self.bag.read_messages():
 			if(not self.data.has_key(topic)):
 				self.data[topic]=curve()
 				if(t.to_sec()<self.mintime):
