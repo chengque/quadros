@@ -210,6 +210,7 @@ class stabilizer:
 			keys.sort()
 			p=itae[keys[0]]
 			print p
+			pub.publish(-100)
 			return 
 
 	def controlcorr(self,throt,att):
@@ -241,7 +242,7 @@ class stabilizer:
 		while not (rospy.is_shutdown()):
 			itae={}
 			for i in range(1,20):
-				for j in range(1,10):
+				for j in range(1,15):
 					print i,j
 					itime=rospy.get_rostime().to_sec()
 					now=0
@@ -255,7 +256,7 @@ class stabilizer:
 						if(dt<0.01):
 							dt=0.01
 						parm[0]=[2+i*0.2,0,0]
-						parm[1]=[0.2+0.03*j,0.02,0]
+						parm[1]=[0.3+0.02*j,0.02,0]
 						ref_pos.z=5
 						ddx=0
 						ddy=0
@@ -322,6 +323,7 @@ class stabilizer:
 			keys.sort()
 			p=itae[keys[0]]
 			print p
+			pub.publish(-100)
 			return 
 
 
@@ -357,8 +359,8 @@ class stabilizer:
 			last_request=now
 			if(dt<0.01):
 				dt=0.01
-			parm[0]=[3,0,0]
-			parm[1]=[0.4,0.0,0]
+			parm[0]=[2.3,0,0]
+			parm[1]=[0.44,0.0,0]
 			ref_pos.z=2
 			i=i+1
 			if(i>10000):
@@ -436,8 +438,8 @@ class stabilizer:
 			ddx=0
 			ddy=0
 			
-			parm[0]=[2.4,0,0]
-			parm[1]=[0.45,0.0,0]
+			parm[0]=[2.8,0,0]
+			parm[1]=[0.52,0.0,0]
 			ref_pos.z=2
 			i=i+1
 			if(i>10000):
@@ -513,4 +515,4 @@ class stabilizer:
 
 if __name__ == '__main__':
 	uav=stabilizer()
-	uav.control(0.5,[0,0,0])
+	uav.controlonce(0.5,[0,0,0])

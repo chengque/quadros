@@ -78,6 +78,8 @@ class UAV:
         now=rospy.get_rostime()
         last_request=now.secs
         while not (rospy.is_shutdown()):
+            if(self.throttle<-1):
+                break
             pub.publish(self.throttle)
             pub1.publish(self.attitude)
             #rospy.loginfo(current_state.mode)

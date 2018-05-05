@@ -101,7 +101,7 @@ class LSR:
 				saver = tf.train.Saver(tf.global_variables())
 				module_file = tf.train.latest_checkpoint('./my-model')
 				print(module_file)
-				saver.restore(self.sess,'/home/chengque/workspace/catkin_ws/src/offboard/scripts/my-model-0')
+				saver.restore(self.sess,'/home/dongwei/workspace/catkin_ws/src/offboard/scripts/my-model-0')
 				print(self.theta.eval())
 			except:
 				traceback.print_exc()
