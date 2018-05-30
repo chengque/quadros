@@ -1,0 +1,8 @@
+prefix=/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel
+
+Name: cfclient
+Description: Description of cfclient
+Version: 2014.04.9001
+Cflags: 
+Libs: -L/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: cfclient
+Description: Description of cfclient
+Version: 2014.04.9001
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

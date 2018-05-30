@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../devel/lib/libmodules__logger.a  CMakeFiles/modules__logger.dir/logger.cpp.o CMakeFiles/modules__logger.dir/log_writer.cpp.o CMakeFiles/modules__logger.dir/log_writer_file.cpp.o CMakeFiles/modules__logger.dir/log_writer_mavlink.cpp.o
+/usr/bin/ranlib ../../../../devel/lib/libmodules__logger.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../devel/lib/libdrivers__ms5525_airspeed.a  CMakeFiles/drivers__ms5525_airspeed.dir/MS5525.cpp.o CMakeFiles/drivers__ms5525_airspeed.dir/MS5525_main.cpp.o
+/usr/bin/ranlib ../../../../devel/lib/libdrivers__ms5525_airspeed.a

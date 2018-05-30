@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libmsvc_bridge.so -o ../devel/lib/libmsvc_bridge.so CMakeFiles/msvc_bridge.dir/src/msvc_bridge.cpp.o 

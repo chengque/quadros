@@ -1,0 +1,8 @@
+prefix=/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel
+
+Name: offboard
+Description: Description of offboard
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel/lib 
+Requires: 

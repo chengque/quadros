@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../devel/lib/libmodules__mc_pos_control.a  CMakeFiles/modules__mc_pos_control.dir/mc_pos_control_main.cpp.o
+/usr/bin/ranlib ../../../../devel/lib/libmodules__mc_pos_control.a

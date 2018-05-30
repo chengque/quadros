@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: px4
+Description: Description of px4
+Version: 1.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

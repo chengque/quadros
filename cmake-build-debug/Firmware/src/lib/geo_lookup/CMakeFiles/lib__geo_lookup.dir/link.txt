@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../devel/lib/liblib__geo_lookup.a  CMakeFiles/lib__geo_lookup.dir/geo_mag_declination.c.o
+/usr/bin/ranlib ../../../../devel/lib/liblib__geo_lookup.a

@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: mynteye_ros_wrapper
+Description: Description of mynteye_ros_wrapper
+Version: 1.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

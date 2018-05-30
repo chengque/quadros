@@ -1,0 +1,8 @@
+prefix=/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel
+
+Name: px4
+Description: Description of px4
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel/lib 
+Requires: 

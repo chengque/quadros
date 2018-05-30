@@ -1,0 +1,8 @@
+prefix=/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel
+
+Name: control_toolbox
+Description: Description of control_toolbox
+Version: 1.13.2
+Cflags: -I/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel/include -I/home/chengque/workspace/catkin_ws/src/control_toolbox/include -I/usr/include
+Libs: -L/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel/lib -lcontrol_toolbox -l:/usr/lib/x86_64-linux-gnu/libtinyxml.so
+Requires: roscpp dynamic_reconfigure realtime_tools message_runtime std_msgs

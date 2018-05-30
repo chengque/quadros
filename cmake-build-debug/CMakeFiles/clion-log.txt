@@ -1,0 +1,192 @@
+/home/chengque/clion-2018.1.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/chengque/workspace/catkin_ws/src
+-- Using CATKIN_DEVEL_PREFIX: /home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel
+-- Using CMAKE_PREFIX_PATH: /opt/ros/indigo
+-- This workspace overlays: /opt/ros/indigo
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/chengque/workspace/catkin_ws/src/cmake-build-debug/test_results
+-- Found gtest sources under '/usr/src/gtest': gtests will be built
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.6.19
+-- BUILD_SHARED_LIBS is on
+WARNING: Package "cfclient" does not follow the version conventions. It should not contain leading zeros (unless the number is 0).
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 22 packages in topological order:
+-- ~~  - crazyflie (metapackage)
+-- ~~  - crazyflie_controller
+-- ~~  - crazyflie_cpp
+-- ~~  - crazyflie_description
+-- ~~  - crazyflie_tools
+-- ~~  - libmotioncapture
+-- ~~  - libobjecttracker
+-- ~~  - libmavconn
+-- ~~  - mavros_msgs
+-- ~~  - cfclient
+-- ~~  - crazyflie_demo
+-- ~~  - realtime_tools
+-- ~~  - control_toolbox
+-- ~~  - mavros
+-- ~~  - offboard
+-- ~~  - crazyflie_driver
+-- ~~  - crazyswarm
+-- ~~  - px4
+-- ~~  - mavros_extras
+-- ~~  - mynteye_ros_wrapper
+-- ~~  - test_mavros
+-- ~~  - vicon_bridge
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin metapackage: 'crazyflie'
+-- ==> add_subdirectory(crazyswarm/ros_ws/src/crazyflie_ros/crazyflie)
+-- +++ processing catkin package: 'crazyflie_controller'
+-- ==> add_subdirectory(crazyswarm/ros_ws/src/crazyflie_ros/crazyflie_controller)
+-- Using these message generators: gencpp;genlisp;genpy
+-- +++ processing catkin package: 'crazyflie_cpp'
+-- ==> add_subdirectory(crazyswarm/ros_ws/src/crazyflie_ros/crazyflie_cpp)
+Using ROS (catkin_make)
+-- +++ processing catkin package: 'crazyflie_description'
+-- ==> add_subdirectory(crazyswarm/ros_ws/src/crazyflie_ros/crazyflie_description)
+-- +++ processing catkin package: 'crazyflie_tools'
+-- ==> add_subdirectory(crazyswarm/ros_ws/src/crazyflie_ros/crazyflie_tools)
+Using ROS (catkin_make)
+-- Boost version: 1.54.0
+-- Found the following Boost libraries:
+--   program_options
+-- +++ processing catkin package: 'libmotioncapture'
+-- ==> add_subdirectory(crazyswarm/ros_ws/src/externalDependencies/libmotioncapture)
+-- Found eigen: /usr/include/eigen3  
+-- Boost version: 1.54.0
+-- Found the following Boost libraries:
+--   system
+--   filesystem
+--   thread
+--   date_time
+--   iostreams
+--   serialization
+--   chrono
+--   atomic
+--   regex
+-- Checking for module 'flann'
+--   Found flann, version 1.8.4
+-- Found Flann: /usr/lib/x86_64-linux-gnu/libflann_cpp_s.a  
+-- Found qhull: /usr/lib/x86_64-linux-gnu/libqhull.so  
+-- Checking for module 'libopenni'
+--   Found libopenni, version 1.5.4.0
+-- Found openni: /usr/lib/libOpenNI.so  
+-- Checking for module 'libopenni2'
+--   Found libopenni2, version 2.2.0.3
+-- Found OpenNI2: /usr/lib/libOpenNI2.so  
+** WARNING ** io features related to pcap will be disabled
+** WARNING ** io features related to png will be disabled
+-- Found libusb-1.0: /usr/include  
+-- looking for PCL_COMMON
+-- Found PCL_COMMON: /usr/lib/libpcl_common.so  
+-- looking for PCL_KDTREE
+-- Found PCL_KDTREE: /usr/lib/libpcl_kdtree.so  
+-- looking for PCL_OCTREE
+-- Found PCL_OCTREE: /usr/lib/libpcl_octree.so  
+-- looking for PCL_SEARCH
+-- Found PCL_SEARCH: /usr/lib/libpcl_search.so  
+-- looking for PCL_SURFACE
+-- Found PCL_SURFACE: /usr/lib/libpcl_surface.so  
+-- looking for PCL_SAMPLE_CONSENSUS
+-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/libpcl_sample_consensus.so  
+-- looking for PCL_IO
+-- Found PCL_IO: /usr/lib/libpcl_io.so  
+-- looking for PCL_FILTERS
+-- Found PCL_FILTERS: /usr/lib/libpcl_filters.so  
+-- looking for PCL_FEATURES
+-- Found PCL_FEATURES: /usr/lib/libpcl_features.so  
+-- looking for PCL_GEOMETRY
+-- Found PCL_GEOMETRY: /usr/include/pcl-1.7  
+-- looking for PCL_KEYPOINTS
+-- Found PCL_KEYPOINTS: /usr/lib/libpcl_keypoints.so  
+-- looking for PCL_REGISTRATION
+-- Found PCL_REGISTRATION: /usr/lib/libpcl_registration.so  
+-- looking for PCL_SEGMENTATION
+-- Found PCL_SEGMENTATION: /usr/lib/libpcl_segmentation.so  
+-- looking for PCL_RECOGNITION
+-- Found PCL_RECOGNITION: /usr/lib/libpcl_recognition.so  
+-- looking for PCL_VISUALIZATION
+-- Found PCL_VISUALIZATION: /usr/lib/libpcl_visualization.so  
+-- looking for PCL_PEOPLE
+-- Found PCL_PEOPLE: /usr/lib/libpcl_people.so  
+-- looking for PCL_OUTOFCORE
+-- Found PCL_OUTOFCORE: /usr/lib/libpcl_outofcore.so  
+-- looking for PCL_TRACKING
+-- Found PCL_TRACKING: /usr/lib/libpcl_tracking.so  
+-- looking for PCL_APPS
+-- Found PCL_APPS: /usr/lib/libpcl_apps.so  
+-- Found PCL: /usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;/usr/lib/libOpenNI.so;/usr/lib/libOpenNI2.so;vtkCommon;vtkFiltering;vtkImaging;vtkGraphics;vtkGenericFiltering;vtkIO;vtkRendering;vtkVolumeRendering;vtkHybrid;vtkWidgets;vtkParallel;vtkInfovis;vtkGeovis;vtkViews;vtkCharts;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;/usr/lib/libOpenNI.so;/usr/lib/libOpenNI2.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;vtkCommon;vtkFiltering;vtkImaging;vtkGraphics;vtkGenericFiltering;vtkIO;vtkRendering;vtkVolumeRendering;vtkHybrid;vtkWidgets;vtkParallel;vtkInfovis;vtkGeovis;vtkViews;vtkCharts  
+-- +++ processing catkin package: 'libobjecttracker'
+-- ==> add_subdirectory(crazyswarm/ros_ws/src/externalDependencies/libobjecttracker)
+-- Boost version: 1.54.0
+-- Found the following Boost libraries:
+--   system
+--   filesystem
+--   thread
+--   date_time
+--   iostreams
+--   serialization
+--   chrono
+--   atomic
+--   regex
+** WARNING ** io features related to pcap will be disabled
+** WARNING ** io features related to png will be disabled
+-- looking for PCL_COMMON
+-- looking for PCL_KDTREE
+-- looking for PCL_OCTREE
+-- looking for PCL_SEARCH
+-- looking for PCL_SURFACE
+-- looking for PCL_SAMPLE_CONSENSUS
+-- looking for PCL_IO
+-- looking for PCL_FILTERS
+-- looking for PCL_FEATURES
+-- looking for PCL_GEOMETRY
+-- looking for PCL_KEYPOINTS
+-- looking for PCL_REGISTRATION
+-- looking for PCL_SEGMENTATION
+-- looking for PCL_RECOGNITION
+-- looking for PCL_VISUALIZATION
+-- looking for PCL_PEOPLE
+-- looking for PCL_OUTOFCORE
+-- looking for PCL_TRACKING
+-- looking for PCL_APPS
+-- +++ processing catkin package: 'libmavconn'
+-- ==> add_subdirectory(mavros/libmavconn)
+-- Boost version: 1.54.0
+-- Found the following Boost libraries:
+--   system
+-- Selected MAVLink dialect: ardupilotmega
+-- +++ processing catkin package: 'mavros_msgs'
+-- ==> add_subdirectory(mavros/mavros_msgs)
+-- Using these message generators: gencpp;genlisp;genpy
+-- mavros_msgs: 25 messages, 27 services
+-- +++ processing catkin package: 'cfclient'
+-- ==> add_subdirectory(crazyswarm/crazyflie-clients-python)
+WARNING: Package "cfclient" does not follow the version conventions. It should not contain leading zeros (unless the number is 0).
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/catkin/cmake/interrogate_setup_dot_py.py", line 259, in <module>
+    main()
+  File "/opt/ros/indigo/share/catkin/cmake/interrogate_setup_dot_py.py", line 250, in main
+    exec(fh.read(), {}, local_vars)
+  File "<string>", line 18, in <module>
+TypeError: exceptions must be old-style classes or derived from BaseException, not str
+CMake Error at /opt/ros/indigo/share/catkin/cmake/safe_execute_process.cmake:11 (message):
+  
+  execute_process(/home/chengque/workspace/catkin_ws/src/cmake-build-debug/catkin_generated/env_cached.sh
+  "/usr/bin/python"
+  "/opt/ros/indigo/share/catkin/cmake/interrogate_setup_dot_py.py" "cfclient"
+  "/home/chengque/workspace/catkin_ws/src/crazyswarm/crazyflie-clients-python/setup.py"
+  "/home/chengque/workspace/catkin_ws/src/cmake-build-debug/crazyswarm/crazyflie-clients-python/catkin_generated/setup_py_interrogation.cmake")
+  returned error code 1
+Call Stack (most recent call first):
+  /opt/ros/indigo/share/catkin/cmake/catkin_python_setup.cmake:69 (safe_execute_process)
+  crazyswarm/crazyflie-clients-python/CMakeLists.txt:5 (catkin_python_setup)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/chengque/workspace/catkin_ws/src/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/home/chengque/workspace/catkin_ws/src/cmake-build-debug/CMakeFiles/CMakeError.log".

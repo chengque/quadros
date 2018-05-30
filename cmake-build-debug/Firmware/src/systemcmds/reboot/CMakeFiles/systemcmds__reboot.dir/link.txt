@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../devel/lib/libsystemcmds__reboot.a  CMakeFiles/systemcmds__reboot.dir/reboot.c.o
+/usr/bin/ranlib ../../../../devel/lib/libsystemcmds__reboot.a

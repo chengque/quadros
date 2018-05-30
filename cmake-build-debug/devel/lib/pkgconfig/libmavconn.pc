@@ -1,0 +1,8 @@
+prefix=/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel
+
+Name: libmavconn
+Description: Description of libmavconn
+Version: 0.17.5
+Cflags: -I/home/chengque/workspace/catkin_ws/src/mavros/libmavconn/include -I/usr/include -I/opt/ros/indigo/include
+Libs: -L/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel/lib -lmavconn -l:/usr/lib/x86_64-linux-gnu/libboost_system.so -l:/usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+Requires: 

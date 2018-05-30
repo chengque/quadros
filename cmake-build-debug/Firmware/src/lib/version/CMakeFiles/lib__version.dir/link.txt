@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../devel/lib/liblib__version.a  CMakeFiles/lib__version.dir/version.c.o
+/usr/bin/ranlib ../../../../devel/lib/liblib__version.a

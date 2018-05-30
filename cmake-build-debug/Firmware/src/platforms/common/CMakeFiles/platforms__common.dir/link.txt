@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../devel/lib/libplatforms__common.a  CMakeFiles/platforms__common.dir/module.cpp.o CMakeFiles/platforms__common.dir/px4_getopt.c.o CMakeFiles/platforms__common.dir/shutdown.cpp.o
+/usr/bin/ranlib ../../../../devel/lib/libplatforms__common.a

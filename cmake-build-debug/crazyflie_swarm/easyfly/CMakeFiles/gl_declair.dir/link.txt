@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -std=c++11 -g  -shared -Wl,-soname,libgl_declair.so -o ../../devel/lib/libgl_declair.so CMakeFiles/gl_declair.dir/include/gl_declair.cpp.o 

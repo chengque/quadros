@@ -1,0 +1,8 @@
+prefix=/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel
+
+Name: easyfly
+Description: Description of easyfly
+Version: 0.0.0
+Cflags: -I/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel/include
+Libs: -L/home/chengque/workspace/catkin_ws/src/cmake-build-debug/devel/lib 
+Requires: message_runtime std_msgs vicon_bridge crazyflie_cpp

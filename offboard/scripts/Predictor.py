@@ -10,20 +10,20 @@ import numpy as np
 import json
 import traceback
 
+
 class StateNetwork:
-	def __init__(self,isize,qsize):
-		self.qstates=deque(np.zeros(qsize))
-		self.qinputs=deque(np.zeros(isize))
-		self.isize=isize
-		self.qsize=qsize
+	def __init__(self,usize,weightfile="inst.h5"):
+		self.usize=usize
 		self.buildmodel()
 		self.tau=0.05
 		self.step=0
+		self.weightfile=weightfile
 		print("Now we load the weight")
+		print weightfile
 		#return 
 		try:
-			self.inst_model.load_weights("inst.h5")
-			self.target_model.load_weights("target.h5")
+			self.inst_model.load_weights(weightfile)
+			#self.target_model.load_weights("target.h5")
 			print("Weight load successfully")
 		except:
 			print("Cannot find the weight")
@@ -44,7 +44,7 @@ class StateNetwork:
 		self.target_model.set_weights(target_weight)
 
 	def savemodel(self):
-		self.inst_model.save_weights('inst.h5',overwrite=True)
+		self.inst_model.save_weights(self.weightfile,overwrite=True)
 		with open("inst.json", "w") as outfile:
 			json.dump(self.inst_model.to_json(), outfile)
 		self.target_model.save_weights('target.h5',overwrite=True)
@@ -52,10 +52,10 @@ class StateNetwork:
 			json.dump(self.target_model.to_json(), outfile)
 
 	def buildmodel(self):
-		u=Input(shape=[self.isize+self.qsize+1])
+		u=Input(shape=[self.usize])
 		model=Sequential()
-		model.add(Conv1D(16,3,activation='tanh',input_shape=(self.isize+self.qsize+1,1)))
-		model.add(Conv1D(16,3,activation='relu'))
+		model.add(Conv1D(64,3,activation='tanh',input_shape=(self.usize,1)))
+		model.add(Conv1D(32,3,activation='relu'))
 		model.add(Flatten())
 		model.add(Dense(16,activation='tanh'))
 		model.add(Dense(1,activation='linear'))
@@ -65,10 +65,10 @@ class StateNetwork:
 		self.inst_model=model
 		self.target_model=model
 		return model, model.trainable_weights, u
+
 	def mean_absolute_percentage_error(self,y_true, y_pred):
 		diff = K.abs((y_true - y_pred) / K.clip(K.abs(y_true), K.epsilon(), np.inf))
 		return 100. * K.max(diff, axis=-1)
-
 
 
 class LSR:
@@ -80,7 +80,6 @@ class LSR:
 		self.buildmodel()
 		self.step=0
 		self.tau=0.05
-
 
 	def buildmodel(self):
 		# declare graph inputs

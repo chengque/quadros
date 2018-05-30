@@ -11,24 +11,20 @@ bag.unpack()
 starti=10
 it=0
 
+
 def getintervel(dat,dt):
 	it=0
-	while(dat[0,it]<dt):
+	while dat[0,it]<dt:
 		it=it+1
 	return dat[:,it:]
 
+
 pos=getintervel(bag.fetch_pos(),starti)
-
 pos_ref=getintervel(bag.fetch_pos_ref(),starti)
-
 vel=getintervel(bag.fetch_vel(),starti)
-
 vel_ref=getintervel(bag.fetch_vel_ref(),starti)
-
 att=getintervel(bag.fetch_att(),starti)
-
 att_ref=getintervel(bag.fetch_att_ref(),starti)
-
 thr_ref=getintervel(bag.fetch_thr_ref(),starti)
 
 '''
@@ -52,12 +48,15 @@ print pos
 print pos.shape
 print len(pos[0,:])
 '''
-ilsize=30
-slsize=3
+ilsize = 30
+slsize = 3
 #ai=LSR(ilsize,slsize)
-ai=StateNetwork(ilsize,slsize)
+#ai = StateNetwork(ilsize,slsize,'weightfilepr.h5')
+ai = StateNetwork(ilsize,slsize,'weightfilelog.h5')
 bsize=32
 #training
+
+
 def learning():
 	loss=0
 	for i in range(100):
@@ -68,14 +67,17 @@ def learning():
 			#print index 
 			#print [1,vel[0,index],att[0,index],att[1,index]],att_ref[0,index:index+ilsize/3],att_ref[0,index:index+ilsize/3+1],thr_ref[0,index:index+ilsize/3]
 			#print np.hstack(([1,vel[0,index],att[0,index],att[1,index]],att_ref[0,index:index+ilsize/3],att_ref[0,index:index+ilsize/3+1],thr_ref[0,index:index+ilsize/3]))
-			lx[j]=np.hstack(([1,vel[1,index]-vel[1,index-2],att[1,index],att[2,index]],att_ref[1,index:index+ilsize/3],att_ref[2,index:index+ilsize/3],thr_ref[1,index:index+ilsize/3]))
+			lx[j]=np.hstack(([1,vel[1,index]-vel[1,index-2],np.log(att[1,index]),np.log(att[2,index])],np.log(att_ref[1,index:index+ilsize/2]),np.log(att_ref[2,index:index+ilsize/2])))
 			lf[j]=vel[1,index+ilsize/3-1]-vel[1,index]
 		loss+=ai.train(lx,lf)
 	ai.savemodel()
 	return loss
+
+
 def train():
-	for i in range(10000):
+	for i in range(50):
 		print "%dth iteration, and the loss is %f"%(i,learning())
+
 
 def predict():
 	lp=len(vel[0])
@@ -83,7 +85,7 @@ def predict():
 	lx=np.zeros((1,ilsize+slsize+1))
 
 	for i in range(len(att_ref[0,:])-100):
-		lx[0]=np.hstack(([1,vel[1,i]-vel[1,i-2],att[1,i],att[2,i]],att_ref[1,i:i+ilsize/3],att_ref[2,i:i+ilsize/3],thr_ref[1,i:i+ilsize/3]))
+		lx[0]=np.hstack(([1,vel[1,i]-vel[1,i-2],np.log(att[1,i]),np.log(att[2,i])],np.log(att_ref[1,i:i+ilsize/2]),np.log(att_ref[2,i:i+ilsize/2])))
 		dx=ai.predict(lx)
 		px[i+ilsize/3-1]=vel[1,i]+dx
 	plt.figure()
@@ -94,10 +96,7 @@ def predict():
 	plt.show()
 
 
-
-
-
-if(__name__=="__main__"):
+if __name__=="__main__":
 	train()
 	#print len(att_ref[1,:])
 	#print len(vel[1,:])

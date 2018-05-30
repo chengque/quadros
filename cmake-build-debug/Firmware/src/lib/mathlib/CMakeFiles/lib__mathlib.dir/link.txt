@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../devel/lib/liblib__mathlib.a  CMakeFiles/lib__mathlib.dir/math/test/test.cpp.o CMakeFiles/lib__mathlib.dir/math/Limits.cpp.o CMakeFiles/lib__mathlib.dir/math/matrix_alg.cpp.o
+/usr/bin/ranlib ../../../../devel/lib/liblib__mathlib.a

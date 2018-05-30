@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: vicon_bridge
+Description: Description of vicon_bridge
+Version: 1.0.1
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib 
+Requires: dynamic_reconfigure geometry_msgs message_runtime roscpp

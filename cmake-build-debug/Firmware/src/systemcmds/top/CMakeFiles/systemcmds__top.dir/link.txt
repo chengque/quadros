@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../devel/lib/libsystemcmds__top.a  CMakeFiles/systemcmds__top.dir/top.c.o
+/usr/bin/ranlib ../../../../devel/lib/libsystemcmds__top.a
