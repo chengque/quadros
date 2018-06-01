@@ -482,8 +482,8 @@ class stabilizer:
 			ref_pos.z=2
 			ddx=0
 			ddy=0
-			parm[0]=[3.2,0,0]
-			parm[1]=[0.36,0.0,0]
+			parm[0]=[2.4,0,0]
+			parm[1]=[0.27,0.01,0]
 
 			#parm[0]=[4,0,0]
 			#parm[1]=[0.46,0.0,0]
