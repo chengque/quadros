@@ -129,7 +129,7 @@ class stabilizer:
 		parm=np.zeros((2,3))
 		i=0
 
-		fl=open("/home/chengque/workspace/catkin_ws/src/offboard/scripts/logc.txt",'w')
+		fl=open("/home/dongwei/workspace/catkin_ws/src/offboard/scripts/logc.txt",'w')
 
 
 		while not (rospy.is_shutdown()):
@@ -154,15 +154,15 @@ class stabilizer:
 						if(dt<0.01):
 							dt=0.01
 						parm[0]=[pp,0,0]
-						parm[1]=[pv,0.02,0]
+						parm[1]=[pv,0.01,0]
 						ref_pos.z=5
 						ddx=0
 						ddy=0
 						if(now<5):
 							ref_pos.x=0
 							ref_pos.y=0
-							parm[0]=[3,0,0]
-							parm[1]=[0.3,0.02,0]
+							parm[0]=[2.3,0,0]
+							parm[1]=[0.36,0.01,0]
 						elif(now<10):
 							ref_pos.x=1
 							ref_pos.y=0.2
@@ -209,8 +209,8 @@ class stabilizer:
 							#rospy.loginfo("failed:max error %f,%f"%(abs(ref_pos.x-self.position.x),self.position.x))
 							print "failed:fall %f"%(self.position.z)
 							break
-						if(now>5):
-							loss+=abs(ref_pos.x-self.position.x)*now
+						if(now>5 and now<10):
+							loss+=abs(ref_pos.x-self.position.x)*(now-5)
 							if(abs(ref_pos.x-self.position.x)>maxe):
 								maxe=abs(ref_pos.x-self.position.x)
 						if(now>=15):
@@ -231,7 +231,7 @@ class stabilizer:
 
 	def controlcorr(self,throt,att):
 		#ai=LSR(30,3)
-		ai=StateNetwork(45,weightfile="/home/chengque/workspace/catkin_ws/src/offboard/scripts/weightposref.h5")
+		ai=StateNetwork(45,weightfile="/home/dongwei/workspace/catkin_ws/src/offboard/scripts/weightposref.h5")
 		rospy.init_node('offboard_control', anonymous=True)
 		self.uav_id=rospy.get_param("~id","")
 		rospy.loginfo(self.uav_id+" master:start offboard control..")
@@ -255,7 +255,7 @@ class stabilizer:
 		ref_att=Vector3()
 		parm=np.zeros((2,3))
 		i=0
-		fl=open("/home/chengque/workspace/catkin_ws/src/offboard/scripts/logcorr.txt",'w')
+		fl=open("/home/dongwei/workspace/catkin_ws/src/offboard/scripts/logcorr.txt",'w')
 
 		while not (rospy.is_shutdown()):
 			itae={}
@@ -267,8 +267,8 @@ class stabilizer:
 					loss=0
 					maxe=0
 
-					pp=2 + i * 0.2;
-					pv=0.3 + 0.02 * j;
+					pp=2 + i * 0.1;
+					pv=0.25 + 0.01 * j;
 
 
 					fl.write(str([pp,pv]))
@@ -280,7 +280,7 @@ class stabilizer:
 						if(dt<0.01):
 							dt=0.01
 						parm[0]=[pp,0,0]
-						parm[1]=[pv,0.02,0]
+						parm[1]=[pv,0.01,0]
 						ref_pos.z=5
 						ddx=0
 						ddy=0
@@ -288,8 +288,8 @@ class stabilizer:
 						if(now<5):
 							ref_pos.x=0
 							ref_pos.y=0
-							parm[0]=[3,0,0]
-							parm[1]=[0.3,0.02,0]
+							parm[0]=[2.3,0,0]
+							parm[1]=[0.36,0.01,0]
 						elif(now<10):
 							ref_pos.x=1
 							ref_pos.y=0.2
@@ -343,8 +343,8 @@ class stabilizer:
 							#rospy.loginfo("failed:max error %f,%f"%(abs(ref_pos.x-self.position.x),self.position.x))
 							print "failed:fall %f"%(self.position.z)
 							break
-						if(now>5):
-							loss+=abs(ref_pos.x-self.position.x)*now
+						if(now>5 and now<10):
+							loss+=abs(ref_pos.x-self.position.x)*(now-5)
 							if(abs(ref_pos.x-self.position.x)>maxe):
 								maxe=abs(ref_pos.x-self.position.x)
 						if(now>=15):
@@ -397,7 +397,7 @@ class stabilizer:
 			if(dt<0.01):
 				dt=0.01
 			parm[0]=[2.3,0,0]
-			parm[1]=[0.44,0.0,0]
+			parm[1]=[0.31,0.01,0]
 			ref_pos.z=2
 			i=i+1
 			if(i>10000):
@@ -443,7 +443,7 @@ class stabilizer:
 
 	def controlcorronce(self,throt,att):
 		#ai=LSR(30,3)
-		ai = StateNetwork(45, weightfile="/home/chengque/workspace/catkin_ws/src/offboard/scripts/weightposref.h5")
+		ai = StateNetwork(45, weightfile="/home/dongwei/workspace/catkin_ws/src/offboard/scripts/weightposref.h5")
 		rospy.init_node('offboard_control', anonymous=True)
 		self.uav_id=rospy.get_param("~id","")
 		rospy.loginfo(self.uav_id+" master:start offboard control..")
@@ -485,6 +485,8 @@ class stabilizer:
 			parm[0]=[2.4,0,0]
 			parm[1]=[0.27,0.01,0]
 
+			#parm[0]=[2.6,0,0]
+			#parm[1]=[0.32,0.01,0]
 			#parm[0]=[4,0,0]
 			#parm[1]=[0.46,0.0,0]
 			ref_pos.z=2
@@ -586,6 +588,7 @@ class stabilizer:
 
 if __name__ == '__main__':
 	uav=stabilizer()
-	uav.controlcorronce(0.5,[0,0,0])
+	#uav.control(0.5,[0,0,0])
+	#uav.controlcorronce(0.5,[0,0,0])
 	#uav.controlcorr(0.5,[0,0,0])
-	#uav.controlonce(0.5,[0,0,0])
+	uav.controlonce(0.5,[0,0,0])
