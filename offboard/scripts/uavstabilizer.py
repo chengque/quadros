@@ -270,7 +270,6 @@ class stabilizer:
 					pp=2 + i * 0.1;
 					pv=0.25 + 0.01 * j;
 
-
 					fl.write(str([pp,pv]))
 
 					while(now<15):
