@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../dashgo_e1/.idea/dashgo_e1.iml" filepath="$PROJECT_DIR$/../dashgo_e1/.idea/dashgo_e1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/offboard.iml" filepath="$PROJECT_DIR$/.idea/offboard.iml" />
       <module fileurl="file:///mnt/disk/Nutstore/workspace/scigraphics/.idea/scigraphics.iml" filepath="/mnt/disk/Nutstore/workspace/scigraphics/.idea/scigraphics.iml" />
     </modules>
