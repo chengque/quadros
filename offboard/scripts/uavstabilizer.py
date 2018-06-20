@@ -496,12 +496,12 @@ class stabilizer:
 				ref_pos.x=0
 				ref_pos.y=0
 				parm[0] = [2.3, 0, 0]
-				parm[1] = [0.44, 0.0, 0]
+				parm[1] = [0.36, 0.0, 0]
 			elif(now<20):
 				ref_pos.x=math.sin(3*now)*i/4000
 				ref_pos.y=math.cos(3*now)*i/4000
-				ref_pos.x=1
-				ref_pos.y=0
+				#ref_pos.x=1
+				#ref_pos.y=0
 			else:
 				ref_pos.x = math.sin(3 * now) * i / 4000
 				ref_pos.y = math.cos(3 * now) * i / 4000
@@ -513,8 +513,8 @@ class stabilizer:
 					ref_pos.y = 0.5
 				else:
 					ref_pos.y = -0.5
-				ref_pos.x = 1
-				ref_pos.y = 0
+				#ref_pos.x = 1
+				#ref_pos.y = 0
 
 
 			if(now>=2.5):
